@@ -21,6 +21,7 @@ run = True
 
 hp = 12
 up = 0
+canjump = True
 
 pos = [50, 300]
 posplat = [[50, 301], [50, 200], [70, 100], [200, 0], [10, 380]]
@@ -49,9 +50,12 @@ while run:
     if keyboard.is_pressed('d'):
         pos[0] += 5
 
-    if keyboard.is_pressed('w') and onplat() and hp > 0 and grav == 0:
+    if keyboard.is_pressed('w') and onplat() and hp > 0 and grav == 0 and canjump:
         grav = 27
         hp -= 1
+        canjump = False
+    elif not keyboard.is_pressed('w'):
+        canjump = True
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
