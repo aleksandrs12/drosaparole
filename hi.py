@@ -51,7 +51,7 @@ while run:
         pos[0] += 5
 
     if keyboard.is_pressed('w') and onplat() and hp > 0 and grav == 0 and canjump:
-        grav = 27
+        grav = 29
         hp -= 1
         canjump = False
     elif not keyboard.is_pressed('w'):
