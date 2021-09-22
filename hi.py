@@ -65,7 +65,7 @@ while run:
     elif pos[0] > 380:
         pos[0] = 380
 
-    if up == 1000:
+    if up == 500:
         hp+= 1
         up = 0
     up+=1
